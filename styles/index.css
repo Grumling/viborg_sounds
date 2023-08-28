@@ -284,7 +284,7 @@ header {
   left: 40%;
   transform: translate(-50%, -50%);
   text-align: left;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(23, 40, 21, 0.8);
   min-width: 70%;
   padding: 20px 60px 40px 30px;
   border-radius: 10px;
@@ -382,7 +382,7 @@ header {
   font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
 }
 
-/* ===== Gallery ===== */
+/** ===== Gallery ===== */
 
 .gallery_main {
   background-image: url('../img/section_bg.jpg');
@@ -458,45 +458,56 @@ header {
   text-align: center;
 }
 
+/** ===== Contact ===== */
+
+form {
+  
+}
+
 /** ===== Footer ===== */
 
 .footer {
   width: 0;
   height: 0;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.9);
   position: absolute;
   overflow: hidden;
   bottom: 0;
-  transition: y 1s ease-in;
+  transition: y 3s ease-in;
   z-index: 998;
 }
 
 .footerOpen {
   width: 100vw;
-  height: 40vh;
+  height: 100vh;
+  transition: y 3s ease-in;
 }
 
 .btnFooter {
   cursor: pointer;
   border: none;
   background: none;
-  color: red;
+  color: var(--color-secondary);
   font-size: 3rem;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  transition: y 1s ease-in;
   z-index: 999;
+  transform: rotate(360deg);
+  transition: 0.25s ease-in;
 }
 
 .btnFooter_open {
-  bottom: 33%;
+  /* bottom: 90vh; */
   transform: rotate(180deg);
+  transition: 0.25s ease-in;
 }
 
 .footer_container {
+  display: flex;
+  justify-content: space-evenly;
   width: 80%;
   height: 60%;
   position: absolute;
@@ -505,9 +516,24 @@ header {
   left: 0;
   right: 0;
   margin: auto;
-  display: grid;
-  place-items: center;
   color: #fff;
   font-size: 1rem;
   letter-spacing: 6px;
+}
+
+footer p {
+  min-height: 100%;
+  flex: 1;
+  padding: 30px 0 0 30px;
+  margin-left: 10px;
+  border-radius: 10px;
+  background: var(--color-primary-dark);
+}
+
+.contact_container {
+  min-height: 100%;
+  flex: 3;
+  padding: 30px 0 0 30px;
+  border-radius: 10px;
+  background: var(--color-primary-dark);
 }
