@@ -2,16 +2,22 @@
 <html lang="en">
 
 <head>
+  <meta name="description" content="Immerse yourself in the captivating essence of Viborg through a symphony of images and sounds. Explore Viborg
+  Sounds, your gateway to stunning visuals capturing the heart of the city and harmonious audio that brings its spirit
+  to life. Journey through the fusion of sights and sounds, experiencing Viborg like never before. Unveil the soul of
+  this enchanting city at Viborg Sounds.">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script src="https://unpkg.com/wavesurfer.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js" defer></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./styles/index.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <script src="./scripts/index.js" defer></script>
-  <title>Document</title>
+  <title>Viborg Sounds | Explorer in sound and imagery</title>
 </head>
 
 <body>
@@ -35,11 +41,12 @@
 
 
   <div class="scroll_control">
-    <a href="#about_anchor"><span class="one"></span></a>
-    <span class="two"></span>
-    <span class="three"></span>
-    <span class="four"></span>
-    <span class="five"></span>
+    <a href="#home_anchor"><span class="one"></span></a>
+    <a href="#about_anchor"><span class="two"></span></a>
+    <a href="#"><span class="three"></span></a>
+    <a href="#"><span class="four"></span></a>
+    <a href="#"><span class="five"></span></a>
+
   </div>
 
   <!-- main -->
@@ -70,16 +77,51 @@
       </article>
     </section>
 
+    <!-- sounds -->
     <section class="slides_sections">
-      <h1>s-three</h1>
+
+      <div class="sounds_wraper">
+        <article>
+          <div class="sound_textbox_container">
+            <h2>Viborg Cathedral</h2>
+            <p>
+              Our Lady Cathedral (Danish: Viborg Domkirke eller Vor Frue Domkirke) is the site of one of Denmark's most
+              important historic churches located in the town of Viborg in northern Jutland. The modern building is a
+              19th-century construction based on Lund Cathedral in southern Sweden which bears no resemblance to the
+              medieval cathedral that stood on the site since 1130.
+            </p>
+          </div>
+        </article>
+
+        <!-- player -->
+        <div class="player">
+          <div class="thumb">
+            <img src="./img/section_bg.jpg" alt="">
+          </div>
+          <div class="info">
+            <div class="detail">
+              <div class="title">
+                Viborg Cathedral
+                <div class="time">
+                  <span id="current">0:00</span>
+                  <span id="duration">0:00</span>
+                </div>
+              </div>
+              <div class="control">
+                <i class="fa-solid fa-play" id="playPause"></i>
+              </div>
+            </div>
+            <div id="wave"></div>
+          </div>
+        </div>
+      </div>
+
     </section>
 
     <section class="slides_sections">
-      <h1>s-four</h1>
     </section>
 
     <section class="slides_sections">
-      <h1>s-five</h1>
     </section>
 
     <section class="slides_sections s_six">
@@ -101,15 +143,16 @@
     <section class="footer_container">
 
       <div class="contact_container">
-        <form action="">
-          <label for="name">Name</label>
-          <input type="text">
-          <label for="Email">Email</label>
-          <input type="email">
-          <label for="phone">phone</label>
-          <input type="tel">
-          <textarea name="message" id="" cols="20" rows="8"></textarea>
-          <button>Send</button>
+        <form class="form" action="">
+          <!-- email -->
+          <input type="text" id="email" class="form_input" autocomplete="off" placeholder=" " required>
+          <label for="email" class="form_label">Email</label>
+          <!-- name -->
+          <input type="text" id="name" class="form_input" autocomplete="off" placeholder=" " required>
+          <label for="email" class="form_label">Name</label>
+          <!-- phone -->
+          <input type="tel" id="phone" class="form_input" autocomplete="off" placeholder=" " required>
+          <label for="email" class="form_label">Phone</label>
         </form>
       </div>
 
@@ -117,7 +160,7 @@
     </section>
   </footer>
 
-  <button class="btnFooter" id="footerBtn"><i class="fa-solid fa-square-caret-up"></i></button>
+  <button class="btnFooter" id="footerBtn" aria-label="Name"><i class="fa-solid fa-square-caret-up"></i></button>
 
 
 </body>

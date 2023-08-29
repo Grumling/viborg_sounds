@@ -76,7 +76,7 @@ header {
 
 .navWrapper {
   position: fixed;
-  z-index: 1;
+  z-index: 998;
   top: 0;
   left: 0;
   height: 100%;
@@ -94,7 +94,7 @@ header {
   position: fixed;
   right: 20px;
   top: 20px;
-  z-index: 2;
+  z-index: 999;
   text-align: center;
   line-height: 50px;
   height: 50px;
@@ -313,6 +313,104 @@ header {
   font-weight: 600;
 }
 
+/** ===== S-three ===== */
+
+.sounds_wraper {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  min-width: 80%;
+}
+
+.sound_textbox_container {
+  background-color: rgba(23, 40, 21, 0.7);
+  margin: auto;
+  margin-top: 10px;
+  height: auto;
+  border-radius: 10px;
+  padding: 15px 20px 35px 20px;
+  max-width: 80%;
+}
+
+.sound_textbox_container h2 {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.sound_textbox_container p {
+  font-weight: 400;
+  line-height: 1.4rem;
+}
+
+/* player */
+.player {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  max-width: 80vw;
+  width: 40rem;
+  background: #fff;
+  border-radius: 0.5rem;
+  /* box-shadow: 0.1rem 1.5rem #10101024; */
+  overflow: hidden;
+  color: black;
+}
+
+@media screen and (max-width: 537px) {
+  .player {
+    display: block;
+  }
+}
+
+.player .thumb {
+  width: 10rm;
+  height: 10rem;
+}
+
+.player .thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player .info {
+  padding: 1rem;
+}
+
+.player .detail {
+  display: grid;
+  grid-template-columns: 1fr 4rem;
+  margin-bottom: 1rem;
+}
+
+.player .title {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem 0;
+}
+
+.player .title .time {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 0.25rem;
+}
+
+.player .control i {
+  width: 3.5rem;
+  height: 3.5rem;
+  display: grid;
+  place-content: center;
+  font-size: 1.25rem;
+  background: #1aafff;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0rem #1aafffaa;
+}
+
+.player .control i:hover {
+  box-shadow: 0 0 1.5rem #1aafffaa;
+  font-size: 1.5rem;
+}
+
 /** ===== S-six ===== */
 
 .wrapper_gallery {
@@ -460,8 +558,55 @@ header {
 
 /** ===== Contact ===== */
 
-form {
-  
+.form {
+  position: relative;
+  width: 20rem;
+  height: 3rem;
+}
+
+.form_input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: solid 2px lightgray;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: #fff;
+  outline: none;
+  padding: 1.25rem;
+  background: none;
+}
+
+.form_input:hover {
+  border-color: #3e5622;
+}
+
+.form_input:focus {
+  border-color: #709255;
+}
+
+.form_label {
+  position: absolute;
+  top: 0.8rem;
+  left: 1rem;
+  padding: 0 0.5rem;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background: #172815;
+}
+
+.form_input:focus ~ .form_label,
+.form_input:not(:placeholder-shown).form_input:not(:focus) ~ .form_label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
+
+.form_mover {
+  margin-bottom: 30px;
 }
 
 /** ===== Footer ===== */
@@ -473,13 +618,12 @@ form {
   position: absolute;
   overflow: hidden;
   bottom: 0;
-  transition: y 3s ease-in;
   z-index: 998;
 }
 
 .footerOpen {
   width: 100vw;
-  height: 100vh;
+  height: 80vh;
   transition: y 3s ease-in;
 }
 
