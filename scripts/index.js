@@ -60,7 +60,7 @@ wavesurfer = WaveSurfer.create({
 });
 
 //load audio file
-wavesurfer.load('./sound/space-hole-test-23665.mp3');
+wavesurfer.load('./sound/cathedral_road_and_workers.wav');
 
 //play and pause a player
 playPause.addEventListener('click', function (e) {
@@ -93,3 +93,5 @@ wavesurfer.on('pause', function (e) {
 wavesurfer.on('seek', function (e) {
   current.textContent = timeCalculator(wavesurfer.getCurrentTime());
 });
+
+Fancybox.bind(); //! Activere fancybox
