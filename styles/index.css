@@ -45,123 +45,137 @@ html {
   background: #808080;
 }
 
-/** ===== Site logo ===== */
+/** ===== navMenu ===== */
 
-header {
-  width: 100vw;
-  height: 60px;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.3rem 10%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+  z-index: -1;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
-    180deg,
-    rgb(112, 146, 85, 0.8),
-    rgb(23, 40, 21, 0.8)
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
   );
   transition: 0.5s;
-  position: fixed;
-  z-index: 1;
-  border-bottom: solid 1px #fff;
+}
+
+.header:hover::after {
+  left: 100%;
 }
 
 .logo {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  position: absolute;
-  top: 10px;
-  left: 15px;
-  color: var(--color-secondary);
-  z-index: 2;
-  font-size: clamp(1rem, 0.75rem + 1.25vw, 1.875rem);
-}
-
-/** ===== navMenu ===== */
-
-.navWrapper {
-  position: fixed;
-  z-index: 998;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(-135deg, #709255, #172815);
-  clip-path: circle(25px at calc(100% - 45px) 45px);
-  transition: all 0.3s ease-in-out;
-}
-
-#active:checked ~ .navWrapper {
-  clip-path: circle(75%);
-}
-
-.navMenu_btn {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  z-index: 999;
-  text-align: center;
-  line-height: 50px;
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-  background: linear-gradient(-135deg, #709255, #172815);
-  transition: all 0.3s ease;
-}
-
-#active:checked ~ .navMenu_btn {
-  background: #fff;
-  color: #3e5622;
-}
-
-#active:checked ~ .navMenu_btn i::before {
-  content: '\f00d'; /* Laver burger icon til et X - FontAwesome values  */
-}
-
-.navWrapper ul {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* center position absolute */
-  text-align: center;
-}
-
-.navWrapper ul li {
-  margin: 15px 0;
-}
-
-.navWrapper ul li a {
+  font-size: 2rem;
   color: var(--color-secondary);
   text-decoration: none;
-  font-size: clamp(1rem, 0.75rem + 1.25vw, 1.875rem);
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.navBar a {
+  font-size: 1.15rem;
+  color: var(--color-secondary);
+  text-decoration: none;
   font-weight: 500;
-  padding: 5px 50px;
-  position: relative;
-  line-height: 50px;
-  transition: all 0.3s ease;
+  margin-left: 2.5rem;
+  font-family: var(--font-display);
 }
 
-.navWrapper ul li a::after {
-  content: '';
+#check {
+  display: none;
+}
+
+.icons {
   position: absolute;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: #fff;
-  border-radius: 50px;
-  transform: scaleY(0);
-  z-index: -1;
-  transition: transform 0.3s ease;
+  right: 5%;
+  font-size: 2.8rem;
+  color: var(--color-secondary);
+  cursor: pointer;
+  display: none;
 }
 
-.navWrapper ul li a:hover:after {
-  transform: scaleY(1);
+@media (max-width: 992px) {
+  .header {
+    padding: 1.3rem 5%;
+  }
 }
 
-.checkbox_hide {
-  display: none; /* Hide the checkbox for the bruger menu */
-}
+@media (max-width: 768px) {
+  .icons {
+    display: inline-flex;
+  }
 
-.navWrapper ul li a:hover {
-  color: #709255;
+  #check:checked ~ .icons #menu_icon {
+    display: none;
+  }
+
+  .icons #close_icon {
+    display: none;
+  }
+
+  #check:checked ~ .icons #close_icon {
+    display: block;
+  }
+
+  .navBar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: 0.3s ease;
+  }
+
+  #check:checked ~ .navBar {
+    height: 13rem;
+  }
+
+  .navBar a {
+    display: block;
+    font-size: 1.1rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    transform: translateY(-50px);
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+
+  #check:checked ~ .navBar a {
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: calc(0.15s * var(--i));
+  }
 }
 
 /**===== Sections styling ===== */
@@ -472,7 +486,8 @@ header {
   align-items: center;
   font-family: var(--font-display);
   font-weight: 500;
-  letter-spacing: 5px;
+  padding: 10px 10px;
+  letter-spacing: 4px;
   cursor: pointer;
   font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
 }
@@ -554,60 +569,6 @@ header {
   font-weight: 900;
   text-align: center;
 }
-
-/** ===== Contact ===== */
-
-.form {
-  position: relative;
-  width: 20rem;
-  height: 3rem;
-}
-
-.form_input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: solid 2px lightgray;
-  border-radius: 0.5rem;
-  font-family: inherit;
-  font-size: inherit;
-  color: #fff;
-  outline: none;
-  padding: 1.25rem;
-  background: none;
-}
-
-.form_input:hover {
-  border-color: #3e5622;
-}
-
-.form_input:focus {
-  border-color: #709255;
-}
-
-.form_label {
-  position: absolute;
-  top: 0.8rem;
-  left: 1rem;
-  padding: 0 0.5rem;
-  cursor: text;
-  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
-  background: #172815;
-}
-
-.form_input:focus ~ .form_label,
-.form_input:not(:placeholder-shown).form_input:not(:focus) ~ .form_label {
-  top: -0.5rem;
-  font-size: 0.8rem;
-  left: 0.8rem;
-}
-
-.form_mover {
-  margin-bottom: 30px;
-}
-
 /** ===== Footer ===== */
 
 .footer {
@@ -621,7 +582,7 @@ header {
 }
 
 .footerOpen {
-  width: 100vw;
+  width: 100%;
   height: 20vh;
   transition: y 3s ease-in;
 }

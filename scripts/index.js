@@ -1,11 +1,10 @@
-
 // Hide nav bar on scroll down and show on scroll up
 
 const mainScroll = document.querySelector('.main_container'); //Get the main container
 
 let lastScrollTop = 0; //This Varibale will store the top position
 
-let navbar = document.querySelector('#navbar_hide'); //Get the navbar
+let navbar = document.querySelector('.header'); //Get the navbar
 
 let hideTopAt = 500;
 
@@ -57,10 +56,31 @@ wavesurfer = WaveSurfer.create({
   progressColor: '#1aafff',
   height: 48,
   srollParent: false,
+  url: '/sound/cathedral_road_and_workers.wav',
+});
+
+wavesurfer2 = WaveSurfer.create({
+  container: '#wave2',
+  waveColor: 'darkgrey',
+  progressColor: '#1aafff',
+  height: 48,
+  srollParent: false,
+  url: '/sound/park_birds.wav',
+});
+
+wavesurfer3 = WaveSurfer.create({
+  container: '#wave3',
+  waveColor: 'darkgrey',
+  progressColor: '#1aafff',
+  height: 48,
+  srollParent: false,
+  url: '/sound/water-by-bench.wav',
 });
 
 //load audio file
-wavesurfer.load('./sound/cathedral_road_and_workers.wav');
+//wavesurfer.load('./sound/cathedral_road_and_workers.wav');
+//wavesurfer.load('./sound/park_birds.wav');
+//wavesurfer.load('./sound/water-by-bench.wav');
 
 //play and pause a player
 playPause.addEventListener('click', function (e) {

@@ -22,20 +22,20 @@
 
 <body>
 
-  <header id="navbar_hide">
-    <h1 class="logo">Viborg Sounds</h1>
+  <header class="header">
+    <a href="#" class="logo">Viborg Sounds</a>
 
-    <!-- navigationMenu -->
-    <input type="checkbox" id="active" class="checkbox_hide" />
-    <label for="active" class="navMenu_btn"><i class="fas fa-bars"></i></label>
-    <nav class="navWrapper">
-      <ul class="navMenu">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#about_anchor">About</a></li>
-        <li><a href="#">Sounds</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+    <input type="checkbox" id="check">
+    <label for="check" class="icons">
+      <i class="fa-solid fa-bars" id="menu_icon"></i>
+      <i class="fa-solid fa-x" id="close_icon"></i>
+    </label>
+
+    <nav class="navBar">
+      <a href="./index.html" style="--i:0;">Home</a>
+      <a href="#about_anchor" style="--i:1;">About</a>
+      <a href="#sounds_anchor" style="--i:2;">Sounds</a>
+      <a href="#gallery_anchor" style="--i:3;">Gallery</a>
     </nav>
   </header>
 
@@ -43,7 +43,7 @@
   <main class="main_container">
 
     <section class="slides_sections s_one">
-      <img src="./img/hero.jpg" alt="">
+      <img src="./img/hero.jpg" alt="Roots of a rododendron bush">
       <article class="hero_text_container">
         <h2>
           Embark on a sensory journey through Viborg city. in images and sounds
@@ -53,7 +53,7 @@
 
     <!-- About -->
     <section class="slides_sections s_two" id="about_anchor">
-      <img src="./img/about.jpg" alt="">
+      <img src="./img/about.jpg" alt="Viborg Cathedral church in black and white">
       <article class="about_text_container">
         <h2>About</h2>
         <p>
@@ -68,20 +68,24 @@
     </section>
 
     <!-- sounds -->
-    <section class="slides_sections">
+    <section class="slides_sections" id="sounds_anchor">
 
       <div class="sounds_wraper">
 
         <div class="player_gallery">
-          <div class="img1"><img src="./img/cathedral_player/bench_player.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img2"><img src="./img/cathedral_player/cathedral_player.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img3"><img src="./img/cathedral_player/cathedral_street_player.jpg" alt=""
+          <div class="img1"><img src="./img/cathedral_player/bench_player.jpg" alt="A white bench"
               data-fancybox="gallery"></div>
-          <div class="img4"><img src="./img/cathedral_player/latiner_garden_player.jpg" alt="" data-fancybox="gallery">
+          <div class="img2"><img src="./img/cathedral_player/cathedral_player.jpg"
+              alt="viborg Cathedral and green bushes" data-fancybox="gallery"></div>
+          <div class="img3"><img src="./img/cathedral_player/cathedral_street_player.jpg"
+              alt="Old Street leading up to the old parts of Viborg" data-fancybox="gallery"></div>
+          <div class="img4"><img src="./img/cathedral_player/latiner_garden_player.jpg"
+              alt="Gravel path in latiner ly garden" data-fancybox="gallery">
           </div>
-          <div class="img5"><img src="./img/cathedral_player/sign_by_cathedral_player.jpg" alt=""
-              data-fancybox="gallery"></div>
-          <div class="img6"><img src="./img/cathedral_player/stone_cathedral_player.jpg" alt="" data-fancybox="gallery">
+          <div class="img5"><img src="./img/cathedral_player/sign_by_cathedral_player.jpg"
+              alt="Stop sign with a funny man drawn on" data-fancybox="gallery"></div>
+          <div class="img6"><img src="./img/cathedral_player/stone_cathedral_player.jpg"
+              alt="Viboorg Cathedral from below" data-fancybox="gallery">
           </div>
         </div>
 
@@ -100,7 +104,7 @@
         <!-- player -->
         <div class="player">
           <div class="thumb">
-            <img src="./img/cathedral_player/cathedral_player.jpg" alt="">
+            <img src="./img/cathedral_player/cathedral_player.jpg" alt="viborg Cathedral and green bushes">
           </div>
           <div class="info">
             <div class="detail">
@@ -127,12 +131,18 @@
       <div class="sounds_wraper">
 
         <div class="player_gallery">
-          <div class="img1"><img src="./img/borgvold_player/berry.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img2"><img src="./img/borgvold_player/black_flower.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img3"><img src="./img/borgvold_player/red_flower.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img4"><img src="./img/borgvold_player/stone.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img5"><img src="./img/borgvold_player/weird_bush.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img6"><img src="./img/borgvold_player/yellow_flower.jpg" alt="" data-fancybox="gallery"></div>
+          <div class="img1"><img src="./img/borgvold_player/berry.jpg" alt="red berry close up" data-fancybox="gallery">
+          </div>
+          <div class="img2"><img src="./img/borgvold_player/black_flower.jpg" alt="black spiky flower"
+              data-fancybox="gallery"></div>
+          <div class="img3"><img src="./img/borgvold_player/red_flower.jpg" alt="red flowers by the ground"
+              data-fancybox="gallery"></div>
+          <div class="img4"><img src="./img/borgvold_player/stone.jpg" alt="big stone carved with text"
+              data-fancybox="gallery"></div>
+          <div class="img5"><img src="./img/borgvold_player/weird_bush.jpg" alt="brownish red flower bush"
+              data-fancybox="gallery"></div>
+          <div class="img6"><img src="./img/borgvold_player/yellow_flower.jpg" alt="yelloow flowers"
+              data-fancybox="gallery"></div>
         </div>
 
         <article>
@@ -149,7 +159,7 @@
         <!-- player -->
         <div class="player">
           <div class="thumb">
-            <img src="./img/borgvold_player/stone_lady.jpg" alt="">
+            <img src="./img/borgvold_player/stone_lady.jpg" alt="a bronze statue of a lady, by a small water fountain">
           </div>
           <div class="info">
             <div class="detail">
@@ -164,11 +174,10 @@
                 <i class="fa-solid fa-play" id="playPause"></i>
               </div>
             </div>
-            <div id="wave"></div>
+            <div id="wave2"></div>
           </div>
         </div>
       </div>
-
 
     </section>
 
@@ -177,12 +186,18 @@
       <div class="sounds_wraper">
 
         <div class="player_gallery">
-          <div class="img1"><img src="./img/lakes_player/broken_tree.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img2"><img src="./img/lakes_player/fallen_log.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img3"><img src="./img/lakes_player/focus_lead.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img4"><img src="./img/lakes_player/ripped_tree.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img5"><img src="./img/lakes_player/rotting_hole.jpg" alt="" data-fancybox="gallery"></div>
-          <div class="img6"><img src="./img/lakes_player/sawn_stump.jpg" alt="" data-fancybox="gallery"></div>
+          <div class="img1"><img src="./img/lakes_player/broken_tree.jpg" alt="broken stump" data-fancybox="gallery">
+          </div>
+          <div class="img2"><img src="./img/lakes_player/fallen_log.jpg" alt="fallen log in the woods"
+              data-fancybox="gallery"></div>
+          <div class="img3"><img src="./img/lakes_player/focus_lead.jpg" alt="single branch of a leaf close up"
+              data-fancybox="gallery"></div>
+          <div class="img4"><img src="./img/lakes_player/ripped_tree.jpg" alt="tree with broken bark"
+              data-fancybox="gallery"></div>
+          <div class="img5"><img src="./img/lakes_player/rotting_hole.jpg" alt="tree with rot hole"
+              data-fancybox="gallery"></div>
+          <div class="img6"><img src="./img/lakes_player/sawn_stump.jpg" alt="a fallen tree sawn in half"
+              data-fancybox="gallery"></div>
         </div>
 
         <article>
@@ -199,7 +214,7 @@
         <!-- player -->
         <div class="player">
           <div class="thumb">
-            <img src="./img/lakes_player/lake_view.jpg" alt="">
+            <img src="./img/lakes_player/lake_view.jpg" alt="greenery by the lake and and houses in the background">
           </div>
           <div class="info">
             <div class="detail">
@@ -214,22 +229,21 @@
                 <i class="fa-solid fa-play" id="playPause"></i>
               </div>
             </div>
-            <div id="wave"></div>
+            <div id="wave3"></div>
           </div>
         </div>
       </div>
 
-
     </section>
 
-    <section class="slides_sections s_six">
+    <section class="slides_sections s_six" id="gallery_anchor">
       <div class="wrapper_gallery">
         <div class="grid_gallery_section_container">
-          <div class="left"><img src="./img/gallerypreview/bridge.jpg"></div>
-          <div class="right"><img src="./img/gallerypreview/stone_path.jpg"></div>
-          <div class="bottom"><img src="./img/gallerypreview/water_edge.jpg"></div>
+          <div class="left"><img src="./img/gallerypreview/bridge.jpg" alt="a white wooden bridge"></div>
+          <div class="right"><img src="./img/gallerypreview/stone_path.jpg" alt="a stony path"></div>
+          <div class="bottom"><img src="./img/gallerypreview/water_edge.jpg" alt="foamy water by the lake"></div>
           <div class="button">
-            <a href="./gallery.html" target="_blank">To gallery</a>
+            <a href="./gallery.html" target="_blank">gallery</a>
           </div>
         </div>
       </div>
@@ -245,7 +259,6 @@
   </footer>
 
   <button class="btnFooter" id="footerBtn" aria-label="Name"><i class="fa-solid fa-square-caret-up"></i></button>
-
 
 </body>
 
